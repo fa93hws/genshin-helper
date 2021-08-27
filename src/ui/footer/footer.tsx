@@ -50,7 +50,7 @@ export const Footer = withTheme((props: WithTheme) => {
           <Weibo />
         </Link>
         <Link
-          href="https://github.com/fa93hws/open-position-cooldown"
+          href="https://github.com/fa93hws/genshin-helper"
           target="__blank"
           className={styles.iconWrapper}
         >
