@@ -37,9 +37,11 @@ jobs:
       - name: Run Esbuild
         run: npm run build
       - name: Add 404 fallback to github page
+        if: github.ref == 'refs/heads/master'
         run: cp -f dist/index.html dist/404.html
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        if: github.ref == 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
