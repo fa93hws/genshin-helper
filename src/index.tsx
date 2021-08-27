@@ -1,13 +1,22 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Header } from '@ui/header/header';
-import 'normalize.css';
+import { CssBaseline } from '@material-ui/core';
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from '@material-ui/core/styles';
+import '@fontsource/roboto';
+
+import { Page } from './page';
+
+const theme = responsiveFontSizes(createTheme());
 
 const Component = () => (
-  <div>
-    <Header />
-    <div>Hello World Mode={process.env.NODE_ENV}</div>
-  </div>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Page />
+  </ThemeProvider>
 );
 
 ReactDOM.render(<Component />, document.getElementById('root'));

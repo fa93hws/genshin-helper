@@ -24,8 +24,10 @@ export function getEsbuildConfig(mode: 'development' | 'production'): Options {
       },
       minify: mode === 'production',
       loader: {
-        '.svg': 'file',
+        '.svg': 'text',
         '.png': 'file',
+        '.woff': 'file',
+        '.woff2': 'file',
       },
       entryNames: '[name]-[hash]',
       assetNames: 'assets/[name]-[hash]',
