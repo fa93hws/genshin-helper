@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "baseUrl": "./",
+    "outDir": "dist",
+    "declaration": true,
+    "jsx": "react",
+    "types": ["jest", "node"]
+  }
+}
