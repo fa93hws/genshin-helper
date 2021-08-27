@@ -8,6 +8,10 @@
     "outDir": "dist",
     "declaration": true,
     "jsx": "react",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "@styles/*": ["./src/styles/*"],
+      "@ui/*": ["./src/ui/*"]
+    }
   }
 }
