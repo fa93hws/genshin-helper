@@ -37,12 +37,12 @@ jobs:
       - name: Run Esbuild
         run: npm run build
       - name: Add 404 fallback to github page
-        run: cp -f target/index.html target/404.html
+        run: cp -f dist/index.html dist/404.html
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: target
+          FOLDER: dist
           CLEAN: true
           SINGLE_COMMIT: true
