@@ -8,7 +8,10 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   setupFilesAfterEnv: ['<rootDir>/config/jest/setup.ts'],
-  moduleNameMapper: {},
+  moduleNameMapper: {
+    '@styles/(.*)$': '<rootDir>/src/styles/$1',
+    '@ui/(.*)$': '<rootDir>/src/ui/$1',
+  },
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.tsnode.json',
