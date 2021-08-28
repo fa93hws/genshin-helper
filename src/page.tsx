@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import { Header } from '@ui/header/header';
 import { Footer } from '@ui/footer/footer';
