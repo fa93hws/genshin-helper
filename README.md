@@ -1,1 +1,1 @@
-http://www.largetimber.com/genshin-helper/
+https://www.largetimber.com/genshin-helper/

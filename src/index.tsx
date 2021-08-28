@@ -7,7 +7,7 @@ import {
   ThemeProvider,
 } from '@material-ui/core/styles';
 import '@fontsource/roboto';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { Page } from './page';
 
@@ -15,10 +15,10 @@ const theme = responsiveFontSizes(createTheme());
 
 const Component = () => (
   <ThemeProvider theme={theme}>
-    <BrowserRouter basename={process.env.BASE_URL}>
+    <HashRouter basename={process.env.BASE_URL}>
       <CssBaseline />
       <Page />
-    </BrowserRouter>
+    </HashRouter>
   </ThemeProvider>
 );
 
