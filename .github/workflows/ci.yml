@@ -35,7 +35,7 @@ jobs:
           file: ./coverage/**/*
           flags: unittests
       - name: Run Esbuild
-        run: npm run build
+        run: BASE_URL=genshin-helper npm run build
       - name: Add 404 fallback to github page
         if: github.ref == 'refs/heads/master'
         run: cp -f dist/index.html dist/404.html
