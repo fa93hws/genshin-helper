@@ -9,7 +9,9 @@
     "test": "jest --ci",
     "format": "prettier --check \"{config,src,tools}/**/*.ts{,x}\"",
     "lint": "eslint \"{config,src,tools}/**/*.ts{,x}\"",
-    "lint:ts": "tsc --noEmit --project ./tsconfig.check.json"
+    "lint:ts": "tsc --noEmit --project ./tsconfig.check.json",
+    "storybook": "start-storybook -p 6006 --config-dir config/storybook",
+    "build-storybook": "build-storybook --config-dir config/storybook -o dist/storybook"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
     "@fontsource/roboto": "^4.5.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "classnames": "^2.3.1",
     "mobx": "^6.3.2",
     "mobx-react": "^7.2.0",
     "react": "^17.0.2",
@@ -25,7 +28,12 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/react": "^6.3.7",
     "@testing-library/react": "^12.0.0",
+    "@types/classnames": "^2.3.1",
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
@@ -45,8 +53,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^27.1.0",
     "prettier": "^2.3.2",
+    "storybook-builder-vite": "0.0.12",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "vite": "^2.5.1"
   }
 }
