@@ -36,6 +36,8 @@ jobs:
           flags: unittests
       - name: Run Esbuild
         run: BASE_URL=genshin-helper npm run build
+      - name: Run Storybook build
+        run: npm run build-storybook
       - name: Add 404 fallback to github page
         if: github.ref == 'refs/heads/master'
         run: cp -f dist/index.html dist/404.html
