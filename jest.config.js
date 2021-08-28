@@ -11,6 +11,7 @@ module.exports = {
   moduleNameMapper: {
     '@styles/(.*)$': '<rootDir>/src/styles/$1',
     '@ui/(.*)$': '<rootDir>/src/ui/$1',
+    '@pages/(.*)$': '<rootDir>/src/pages/$1',
   },
   globals: {
     'ts-jest': {

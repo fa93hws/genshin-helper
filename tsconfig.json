@@ -11,7 +11,8 @@
     "types": ["jest", "node"],
     "paths": {
       "@styles/*": ["./src/styles/*"],
-      "@ui/*": ["./src/ui/*"]
+      "@ui/*": ["./src/ui/*"],
+      "@pages/*": ["./src/pages/*"]
     }
   }
 }
