@@ -8,8 +8,8 @@ import { Footer } from '@ui/footer/footer';
 import { Home } from '@pages/home/home';
 import { sizes } from '@styles/styles';
 import { NotFound } from '@pages/not-found/404';
-import { NumberCube } from '@pages/puzzle/inazuma/cube/number/number';
-import { RotationCube } from '@pages/puzzle/inazuma/cube/rotation/rotation';
+import { NumberCube } from '@pages/puzzle/inazuma/number-cube/number-cube';
+import { RotationCube } from '@pages/puzzle/inazuma/rotation-cube/rotation-cube';
 import { pagePaths } from '@pages/routes';
 
 const useStyles = makeStyles((theme) => ({
