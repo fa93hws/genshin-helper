@@ -6,7 +6,7 @@ import { sizes } from '@styles/styles';
 import { RotationCube, Orientation } from '../rotation';
 
 export default {
-  title: 'ui/cube/rotation',
+  title: 'pages/puzzle/inazuma/rotation-cube/cube',
   component: RotationCube,
 };
 
@@ -38,7 +38,9 @@ export const Stateful = ({ orientation }: { orientation: Orientation }) => (
 Stateful.argTypes = {
   orientation: {
     options: ['north', 'east', 'south', 'west'],
-    defaultValue: 'north',
     control: { type: 'select' },
   },
+};
+Stateful.args = {
+  orientation: 'north',
 };

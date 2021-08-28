@@ -5,8 +5,8 @@ export const pagePaths = {
     inazuma: {
       cube: {
         // TODO: auto generate this
-        number: '/puzzle/inazuma/cube/number',
-        rotation: '/puzzle/inazuma/cube/rotation',
+        number: '/puzzle/inazuma/number-cube',
+        rotation: '/puzzle/inazuma/rotation-cube',
       },
     },
   },
