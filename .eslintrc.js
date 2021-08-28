@@ -79,5 +79,11 @@ module.exports = {
         'no-console': 'off',
       },
     },
+    {
+      files: ['*.stories.tsx'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
   ],
 };
