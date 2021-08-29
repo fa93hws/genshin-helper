@@ -9,6 +9,7 @@
     "declaration": true,
     "jsx": "react",
     "types": ["jest", "node"],
+    "skipLibCheck": true,
     "paths": {
       "@styles/*": ["./src/styles/*"],
       "@ui/*": ["./src/ui/*"],

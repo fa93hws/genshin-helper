@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { makeStyles, colors } from '@material-ui/core';
-import classnames from 'classnames';
+import { observer } from 'mobx-react';
+import { makeStyles, colors, Button } from '@material-ui/core';
 
 import { sizes } from '@styles/styles';
+import { RotationCubeStore } from './cube-store';
 
 const useStyles = makeStyles({
   root: {
@@ -13,36 +14,35 @@ const useStyles = makeStyles({
     display: 'inline-block',
     height: sizes[4],
     width: sizes[4],
-    transition: 'transform 1s',
-  },
-  east: {
-    transform: 'rotate(90deg)',
-  },
-  south: {
-    transform: 'rotate(180deg)',
-  },
-  west: {
-    transform: 'rotate(270deg)',
-  },
-  north: {
-    transform: 'rotate(0)',
+    transition: 'transform 500ms',
   },
 });
 
-export type Orientation = 'north' | 'east' | 'south' | 'west';
 type Props = {
-  orientation: Orientation;
+  rotationDeg: number;
+  onClick(): void;
 };
+
 export const RotationCube = (props: Props) => {
   const styles = useStyles();
   return (
-    <div
-      className={classnames(styles.root, {
-        [styles.east]: props.orientation === 'east',
-        [styles.west]: props.orientation === 'west',
-        [styles.south]: props.orientation === 'south',
-        [styles.north]: props.orientation === 'north',
-      })}
-    ></div>
+    <Button
+      className={styles.root}
+      style={{
+        transform: `rotate(${props.rotationDeg}deg)`,
+      }}
+      aria-label="rotate-cube"
+      onClick={props.onClick}
+    />
   );
 };
+
+export function createStatefulRotationCube(rotationDeg: number) {
+  const store = new RotationCubeStore(rotationDeg);
+  const onClick = () => store.rotate();
+
+  const Component = observer(() => (
+    <RotationCube rotationDeg={store.rotationDeg} onClick={onClick} />
+  ));
+  return { Component, store };
+}

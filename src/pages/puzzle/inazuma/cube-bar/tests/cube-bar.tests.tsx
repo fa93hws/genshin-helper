@@ -29,16 +29,13 @@ describe('CubeBar', () => {
 
   it('fire add event when add button is clicked', () => {
     render(<Bar disableAddButton={false} disableRemoveButton={false} />);
-    userEvent.click(screen.getByLabelText('add-cube'), new MouseEvent('click'));
+    userEvent.click(screen.getByLabelText('add-cube'));
     expect(add).toHaveBeenCalledTimes(1);
   });
 
   it('fire remove event when remove button is clicked', () => {
     render(<Bar disableAddButton={false} disableRemoveButton={false} />);
-    userEvent.click(
-      screen.getByLabelText('remove-cube'),
-      new MouseEvent('click'),
-    );
+    userEvent.click(screen.getByLabelText('remove-cube'));
     expect(remove).toHaveBeenCalledTimes(1);
   });
 
