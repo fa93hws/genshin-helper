@@ -6,7 +6,7 @@ import { gridBaseline } from '@styles/styles';
 import { RotationCube, createStatefulRotationCube } from '../cube';
 
 export default {
-  title: 'pages/puzzle/inazuma/rotation-cube/control/cube',
+  title: 'pages/puzzle/inazuma/rotation-cube/quantity-config/cube',
   component: RotationCube,
 };
 

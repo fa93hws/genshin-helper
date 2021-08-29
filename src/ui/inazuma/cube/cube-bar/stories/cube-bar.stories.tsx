@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 import { CubeBar, CubeBarProps } from '../cube-bar';
 
 export default {
-  title: 'pages/puzzle/inazuma/cube-bar',
+  title: 'ui/inazuma/cube/cube-bar',
   component: CubeBar,
 };
 
