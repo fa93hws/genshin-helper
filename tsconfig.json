@@ -3,7 +3,7 @@
     "strict": true,
     "module": "CommonJS",
     "moduleResolution": "node",
-    "target": "ESNext",
+    "target": "ES2019",
     "baseUrl": "./",
     "outDir": "dist",
     "declaration": true,
