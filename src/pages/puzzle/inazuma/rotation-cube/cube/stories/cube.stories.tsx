@@ -3,7 +3,7 @@ import { Box, makeStyles } from '@material-ui/core';
 
 import { StoryContainer } from '@ui/storybook/container';
 import { sizes } from '@styles/styles';
-import { RotationCube, Orientation } from '../rotation';
+import { RotationCube, Orientation } from '../cube';
 
 export default {
   title: 'pages/puzzle/inazuma/rotation-cube/cube',
