@@ -11,7 +11,7 @@
     "lint": "eslint \"{config,src,tools}/**/*.ts{,x}\"",
     "lint:ts": "tsc --noEmit --project ./tsconfig.check.json",
     "storybook": "start-storybook -p 6006 --config-dir config/storybook",
-    "build-storybook": "build-storybook --config-dir config/storybook -o dist/storybook"
+    "build-storybook": "build-storybook --config-dir config/storybook"
   },
   "author": "",
   "license": "ISC",
