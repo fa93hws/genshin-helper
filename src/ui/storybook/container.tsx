@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 
 const useStyles = makeStyles({
   root: {
-    padding: sizes[0],
+    padding: gridBaseline * 3,
   },
 });
 
