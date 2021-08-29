@@ -2,31 +2,31 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { createControl } from '../control';
+import { createQuantityConfig } from '../quantity-config';
 
-describe('Control', () => {
-  describe('createControl', () => {
+describe('QuantityConfig', () => {
+  describe('createQuantityConfig', () => {
     it('throws if nCubes is larger than maxCubes', () => {
       expect(() =>
-        createControl({ nCubes: 5, maxCubes: 4, minCubes: 3 }),
+        createQuantityConfig({ nCubes: 5, maxCubes: 4, minCubes: 3 }),
       ).toThrow();
     });
 
     it('throws if nCubes is smaller than minCubes', () => {
       expect(() =>
-        createControl({ nCubes: 1, maxCubes: 4, minCubes: 3 }),
+        createQuantityConfig({ nCubes: 1, maxCubes: 4, minCubes: 3 }),
       ).toThrow();
     });
 
     it('throws if maxCubes is equal to minCubes', () => {
       expect(() =>
-        createControl({ nCubes: 3, maxCubes: 3, minCubes: 3 }),
+        createQuantityConfig({ nCubes: 3, maxCubes: 3, minCubes: 3 }),
       ).toThrow();
     });
   });
 
   it('adds cube till reach max', () => {
-    const { Component } = createControl({
+    const { Component } = createQuantityConfig({
       nCubes: 3,
       maxCubes: 5,
       minCubes: 1,
@@ -42,7 +42,7 @@ describe('Control', () => {
   });
 
   it('removes cube till reach min', () => {
-    const { Component } = createControl({
+    const { Component } = createQuantityConfig({
       nCubes: 3,
       maxCubes: 5,
       minCubes: 1,

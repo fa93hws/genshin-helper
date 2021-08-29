@@ -4,7 +4,7 @@ import { makeObservable, observable, action, computed } from 'mobx';
 import { RotationCubeStore } from './cube/cube-store';
 import { createStatefulRotationCube } from './cube/cube';
 
-export class ControlStore {
+export class QuantityConfigStore {
   public rotationCubeStores: RotationCubeStore[];
 
   public rotationCubeComponents: React.ComponentType[];
@@ -34,13 +34,13 @@ export class ControlStore {
     });
   }
 
-  static createControlStore(
+  static createQuantityConfigStore(
     nCubes: number,
     config: {
       minCubes: number;
       maxCubes: number;
     },
-  ): ControlStore {
+  ): QuantityConfigStore {
     if (nCubes < config.minCubes || nCubes > config.maxCubes) {
       throw new Error(
         `nCubes must be larger than min and smaller than max. min=${config.minCubes}, max=${config.maxCubes}`,
@@ -49,16 +49,16 @@ export class ControlStore {
     if (config.minCubes >= config.maxCubes) {
       throw new Error(`minCubes must be smaller than maxCubes`);
     }
-    const controlStore = new ControlStore({
+    const quantityConfigStore = new QuantityConfigStore({
       rotationCubeStores: [],
       rotationCubeComponents: [],
       maxCubes: config.maxCubes,
       minCubes: config.minCubes,
     });
     for (let i = 0; i < nCubes; i += 1) {
-      controlStore.maybeAdd();
+      quantityConfigStore.maybeAdd();
     }
-    return controlStore;
+    return quantityConfigStore;
   }
 
   get canAdd(): boolean {

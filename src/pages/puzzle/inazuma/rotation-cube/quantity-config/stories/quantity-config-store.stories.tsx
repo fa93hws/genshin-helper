@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { createControl } from '../control';
+import { createQuantityConfig } from '../quantity-config';
 
 export default {
-  title: 'pages/puzzle/inazuma/rotation-cube/control',
+  title: 'pages/puzzle/inazuma/rotation-cube/quantity-config-store',
   Component: () => <div />,
 };
 
 export const Stateful = () => {
-  const { Component: StatefulRotationCube } = createControl({
+  const { Component: StatefulRotationCube } = createQuantityConfig({
     nCubes: 3,
     minCubes: 3,
     maxCubes: 5,

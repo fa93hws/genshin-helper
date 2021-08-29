@@ -1,8 +1,8 @@
-import { ControlStore } from '../control-store';
+import { QuantityConfigStore } from '../quantity-config-store';
 
-describe('ControlStore', () => {
+describe('QuantityConfigStore', () => {
   it('will not add if reach max', () => {
-    const store = ControlStore.createControlStore(3, {
+    const store = QuantityConfigStore.createQuantityConfigStore(3, {
       minCubes: 1,
       maxCubes: 3,
     });
@@ -12,7 +12,7 @@ describe('ControlStore', () => {
   });
 
   it('will not remove if reach min', () => {
-    const store = ControlStore.createControlStore(3, {
+    const store = QuantityConfigStore.createQuantityConfigStore(3, {
       minCubes: 3,
       maxCubes: 5,
     });
