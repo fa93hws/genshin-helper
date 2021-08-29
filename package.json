@@ -11,7 +11,7 @@
     "lint": "eslint \"{config,src,tools}/**/*.ts{,x}\"",
     "lint:ts": "tsc --noEmit --project ./tsconfig.check.json",
     "storybook": "start-storybook -p 6006 --config-dir config/storybook",
-    "build-storybook": "build-storybook --config-dir config/storybook -o dist/storybook"
+    "build-storybook": "build-storybook --config-dir config/storybook"
   },
   "author": "",
   "license": "ISC",
@@ -32,7 +32,9 @@
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
     "@storybook/react": "^6.3.7",
+    "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/classnames": "^2.3.1",
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.19",
