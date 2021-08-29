@@ -1,4 +1,4 @@
-import { makeObservable, action, observable } from 'mobx';
+import { makeObservable, observable } from 'mobx';
 import { colors } from '@material-ui/core';
 
 export const labelColors = [
