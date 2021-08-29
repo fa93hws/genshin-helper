@@ -67,7 +67,16 @@ Stateless.argTypes = {
       type: 'color',
     },
   },
+  isActive: {
+    control: {
+      type: 'boolean',
+    },
+  },
+  onClick: {
+    action: 'clicked',
+  },
 };
 Stateless.args = {
   color: colors.blue[900],
+  isActive: false,
 };
