@@ -6,6 +6,7 @@ import { gridBaseline } from '@styles/styles';
 const useStyles = makeStyles({
   root: {
     padding: gridBaseline * 3,
+    display: 'inline-block',
   },
 });
 
