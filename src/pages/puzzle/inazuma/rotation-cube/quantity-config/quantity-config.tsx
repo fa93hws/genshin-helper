@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 
-import { CubeBar } from '@pages/puzzle/inazuma/cube-bar/cube-bar';
+import { CubeBar } from '@ui/inazuma/cube/cube-bar/cube-bar';
 import { QuantityConfigStore } from './quantity-config-store';
 
 export function createQuantityConfig(params: {

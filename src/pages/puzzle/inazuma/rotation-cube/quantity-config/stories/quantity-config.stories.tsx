@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createQuantityConfig } from '../quantity-config';
 
 export default {
-  title: 'pages/puzzle/inazuma/rotation-cube/quantity-config-store',
+  title: 'pages/puzzle/inazuma/rotation-cube/quantity-config',
   Component: () => <div />,
 };
 

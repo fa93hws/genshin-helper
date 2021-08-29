@@ -12,11 +12,12 @@ const useStyles = makeStyles({
 type Props = {
   children: React.ReactNode;
   legend?: string;
+  className?: string;
 };
 export const StoryContainer = (props: Props) => {
   const classnames = useStyles();
   return (
-    <Box>
+    <Box className={props.className}>
       <fieldset className={classnames.root}>
         {props.legend && <legend>{props.legend}</legend>}
         {props.children}
