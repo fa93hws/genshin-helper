@@ -3,19 +3,19 @@ import { Box, Link } from '@material-ui/core';
 import { makeStyles, withTheme, WithTheme } from '@material-ui/core/styles';
 import { GitHub, Code } from '@material-ui/icons';
 
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 import { Weibo } from './icons';
 
 const iconSize = {
-  width: sizes[1],
-  height: sizes[1],
+  width: gridBaseline * 3,
+  height: gridBaseline * 3,
 };
 const useFooterStyle = makeStyles((theme) => ({
   container: {
-    height: sizes[2],
+    height: gridBaseline * 6,
     backgroundColor: theme.palette.primary.main,
     [theme.breakpoints.up('sm')]: {
-      height: sizes[3],
+      height: gridBaseline * 8,
     },
   },
   iconWrapper: {

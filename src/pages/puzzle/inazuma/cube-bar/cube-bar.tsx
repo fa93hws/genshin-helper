@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { AddCircleOutline, RemoveCircleOutline } from '@material-ui/icons';
 
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 
 export type CubeBarProps = {
   onAddClicked(): void;
@@ -19,18 +19,22 @@ export type CubeBarProps = {
   title: string;
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   cubeContainer: {
     border: `1px solid ${colors.grey[900]}`,
     display: 'inline-flex',
-    padding: sizes[1],
-    gap: sizes[0],
+    padding: gridBaseline * 2,
+    gap: gridBaseline,
+    [theme.breakpoints.up('sm')]: {
+      padding: gridBaseline * 4,
+      gap: gridBaseline * 3,
+    },
   },
   titleBar: {
     display: 'flex',
     alignItems: 'center',
   },
-});
+}));
 
 export const CubeBar = (props: CubeBarProps) => {
   const styles = useStyles();

@@ -6,7 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { Header } from '@ui/header/header';
 import { Footer } from '@ui/footer/footer';
 import { Home } from '@pages/home/home';
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 import { NotFound } from '@pages/not-found/404';
 import { NumberCube } from '@pages/puzzle/inazuma/number-cube/number-cube';
 import { createRotationCubePage } from '@pages/puzzle/inazuma/rotation-cube/rotation-cube';
@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     flex: 1,
+    margin: gridBaseline * 2,
     [theme.breakpoints.up('sm')]: {
-      margin: sizes[1],
+      margin: gridBaseline * 4,
     },
   },
 }));

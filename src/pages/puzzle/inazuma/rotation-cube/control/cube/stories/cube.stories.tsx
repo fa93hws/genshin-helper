@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 
 import { StoryContainer } from '@ui/storybook/container';
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 import { RotationCube, createStatefulRotationCube } from '../cube';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    gap: sizes[1],
+    gap: gridBaseline * 4,
   },
 });
 
