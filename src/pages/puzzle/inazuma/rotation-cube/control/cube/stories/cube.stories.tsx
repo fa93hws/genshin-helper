@@ -6,7 +6,7 @@ import { sizes } from '@styles/styles';
 import { RotationCube, createStatefulRotationCube } from '../cube';
 
 export default {
-  title: 'pages/puzzle/inazuma/rotation-cube/cube',
+  title: 'pages/puzzle/inazuma/rotation-cube/control/cube',
   component: RotationCube,
 };
 

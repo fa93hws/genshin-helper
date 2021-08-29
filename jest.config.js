@@ -5,6 +5,7 @@ module.exports = {
     'tools/**/*.ts',
     'config/**/*.ts',
     '!**/fixtures/**',
+    '!**/stories/**',
   ],
   coverageDirectory: 'coverage',
   setupFilesAfterEnv: ['<rootDir>/config/jest/setup.ts'],

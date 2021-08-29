@@ -9,7 +9,7 @@ import { Home } from '@pages/home/home';
 import { sizes } from '@styles/styles';
 import { NotFound } from '@pages/not-found/404';
 import { NumberCube } from '@pages/puzzle/inazuma/number-cube/number-cube';
-import { RotationCube } from '@pages/puzzle/inazuma/rotation-cube/rotation-cube';
+import { createRotationCubePage } from '@pages/puzzle/inazuma/rotation-cube/rotation-cube';
 import { pagePaths } from '@pages/routes';
 
 const useStyles = makeStyles((theme) => ({
@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Page = () => {
+export const Page = React.memo(() => {
   const styles = useStyles();
+  const RotationCubePage = React.useMemo(() => createRotationCubePage(), []);
   return (
     <Box display="flex" flexDirection="column" className={styles.root}>
       <Header />
@@ -38,7 +39,7 @@ export const Page = () => {
             <NumberCube />
           </Route>
           <Route exact path={pagePaths.puzzle.inazuma.cube.rotation}>
-            <RotationCube />
+            <RotationCubePage />
           </Route>
           <Route exact path={pagePaths.notFound}>
             <NotFound />
@@ -51,4 +52,4 @@ export const Page = () => {
       <Footer />
     </Box>
   );
-};
+});
