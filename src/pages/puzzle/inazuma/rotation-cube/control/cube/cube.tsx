@@ -2,21 +2,26 @@ import * as React from 'react';
 import { observer } from 'mobx-react';
 import { makeStyles, colors, Button } from '@material-ui/core';
 
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 import { RotationCubeStore } from './cube-store';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     borderStyle: 'solid',
     borderWidth: '4px 1px 1px 1px',
     borderColor: colors.grey[900],
     borderTopColor: colors.purple[700],
     display: 'inline-block',
-    height: sizes[4],
-    width: sizes[4],
+    height: gridBaseline * 6,
+    width: gridBaseline * 6,
+    minWidth: 'unset',
+    [theme.breakpoints.up('sm')]: {
+      height: gridBaseline * 8,
+      width: gridBaseline * 8,
+    },
     transition: 'transform 500ms',
   },
-});
+}));
 
 type Props = {
   rotationDeg: number;

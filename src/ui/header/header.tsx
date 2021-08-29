@@ -4,7 +4,7 @@ import { makeStyles, withTheme, WithTheme } from '@material-ui/core/styles';
 import { Home } from '@material-ui/icons';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-import { sizes } from '@styles/styles';
+import { gridBaseline } from '@styles/styles';
 import { pagePaths } from '@pages/routes';
 
 const useHeaderStyles = makeStyles((theme) => ({
@@ -12,9 +12,9 @@ const useHeaderStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: sizes[3],
+    height: gridBaseline * 6,
     [theme.breakpoints.up('sm')]: {
-      height: sizes[4],
+      height: gridBaseline * 8,
     },
   },
   iconWrapper: {
