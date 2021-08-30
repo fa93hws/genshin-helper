@@ -37,6 +37,8 @@ export const FiveColors = () => {
               color={color}
               onClick={noop}
               isActive={false}
+              // groupId is only for accessible usage
+              groupId={1}
             />
           ))}
         </Box>
@@ -52,6 +54,8 @@ export const FiveColors = () => {
               color={color}
               onClick={noop}
               isActive={true}
+              // groupId is only for accessible usage
+              groupId={1}
             />
           ))}
         </Box>
@@ -79,4 +83,6 @@ Stateless.argTypes = {
 Stateless.args = {
   color: colors.blue[900],
   isActive: false,
+  // groupId is only for accessible usage
+  groupId: 2,
 };
