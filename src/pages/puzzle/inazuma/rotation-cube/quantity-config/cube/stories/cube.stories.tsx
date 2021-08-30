@@ -22,18 +22,20 @@ export const FourDirection = ({ onClick }: { onClick(): void }) => {
   return (
     <StoryContainer legend="旋转方块(东南西北)">
       <Box className={classnames.root}>
-        <RotationCube rotationDeg={90} onClick={onClick} />
-        <RotationCube rotationDeg={180} onClick={onClick} />
-        <RotationCube rotationDeg={270} onClick={onClick} />
-        <RotationCube rotationDeg={360} onClick={onClick} />
+        <RotationCube rotationDeg={90} onClick={onClick} cubeId={0} />
+        <RotationCube rotationDeg={180} onClick={onClick} cubeId={1} />
+        <RotationCube rotationDeg={270} onClick={onClick} cubeId={2} />
+        <RotationCube rotationDeg={360} onClick={onClick} cubeId={3} />
       </Box>
     </StoryContainer>
   );
 };
 
-export const Stateless = (props: { rotationDeg: number; onClick(): void }) => (
-  <RotationCube {...props} />
-);
+export const Stateless = (props: {
+  rotationDeg: number;
+  onClick(): void;
+  cubeId: number;
+}) => <RotationCube {...props} />;
 Stateless.argTypes = {
   rotationDeg: {
     options: [0, 90, 180, 270],
@@ -45,6 +47,7 @@ Stateless.argTypes = {
 };
 Stateless.args = {
   rotationDeg: 0,
+  cubeId: 0,
 };
 
 export const Stateful = () => {

@@ -33,12 +33,21 @@ describe('QuantityConfig', () => {
     });
     render(<Component />);
     const addButton = screen.getByLabelText('add-cube');
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(3);
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(3);
     userEvent.click(addButton);
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(4);
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(4);
     userEvent.click(addButton);
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(5);
-    expect(addButton).toHaveAttribute('disabled');
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(5);
+    expect(addButton).toBeDisabled();
   });
 
   it('removes cube till reach min', () => {
@@ -49,11 +58,20 @@ describe('QuantityConfig', () => {
     });
     render(<Component />);
     const removeButton = screen.getByLabelText('remove-cube');
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(3);
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(3);
     userEvent.click(removeButton);
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(2);
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(2);
     userEvent.click(removeButton);
-    expect(screen.getAllByLabelText('rotate-cube').length).toEqual(1);
-    expect(removeButton).toHaveAttribute('disabled');
+    expect(
+      screen.getAllByLabelText(/^rotate cube \d to (north|east|west|south)$/)
+        .length,
+    ).toEqual(1);
+    expect(removeButton).toBeDisabled();
   });
 });

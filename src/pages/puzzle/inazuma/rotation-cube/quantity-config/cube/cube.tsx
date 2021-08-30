@@ -26,28 +26,54 @@ const useStyles = makeStyles((theme) => ({
 type Props = {
   rotationDeg: number;
   onClick(): void;
+  cubeId: number;
 };
 
-export const RotationCube = (props: Props) => {
+const currentDegToNextOrientation: Record<number, string | undefined> = {
+  0: 'east',
+  90: 'south',
+  180: 'west',
+  270: 'north',
+};
+
+export const RotationCube = React.memo((props: Props) => {
   const styles = useStyles();
+  const degReminder = React.useMemo(
+    () => props.rotationDeg % 360,
+    [props.rotationDeg],
+  );
+  const nextOrientation = React.useMemo(
+    () => currentDegToNextOrientation[degReminder],
+    [degReminder],
+  );
+  if (nextOrientation == null) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `props.rotationDeg is ${props.rotationDeg}, not a multiplier of 90 deg`,
+    );
+  }
   return (
     <Button
       className={styles.root}
       style={{
         transform: `rotate(${props.rotationDeg}deg)`,
       }}
-      aria-label="rotate-cube"
+      aria-label={`rotate cube ${props.cubeId} to ${nextOrientation}`}
       onClick={props.onClick}
     />
   );
-};
+});
 
-export function createStatefulRotationCube(rotationDeg: number) {
-  const store = new RotationCubeStore(rotationDeg);
+export function createStatefulRotationCube(id: number) {
+  const store = new RotationCubeStore(0);
   const onClick = () => store.rotate();
 
   const Component = observer(() => (
-    <RotationCube rotationDeg={store.rotationDeg} onClick={onClick} />
+    <RotationCube
+      rotationDeg={store.rotationDeg}
+      onClick={onClick}
+      cubeId={id}
+    />
   ));
   return { Component, store };
 }
