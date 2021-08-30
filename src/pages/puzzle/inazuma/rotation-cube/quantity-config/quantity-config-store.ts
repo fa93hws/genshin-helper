@@ -69,7 +69,8 @@ export class QuantityConfigStore {
     if (!this.canAdd) {
       return;
     }
-    const { Component, store } = createStatefulRotationCube(0);
+    const cubeId = this.rotationCubeStores.length;
+    const { Component, store } = createStatefulRotationCube(cubeId);
     this.rotationCubeStores.push(store);
     this.rotationCubeComponents.push(Component);
   }
