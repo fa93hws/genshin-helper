@@ -29,10 +29,15 @@ export type GroupLabelProps = {
   color: string;
   onClick(): void;
   isActive: boolean;
+  groupId: number;
 };
 
 export const GroupLabel = React.memo((props: GroupLabelProps) => {
   const styles = useStyles();
+  const verb = React.useMemo(
+    () => (props.isActive ? 'inactive' : 'active'),
+    [props.isActive],
+  );
   return (
     <Button
       className={classnames(styles.root, {
@@ -41,7 +46,9 @@ export const GroupLabel = React.memo((props: GroupLabelProps) => {
       style={{
         backgroundColor: props.color,
       }}
-      aria-label="choose-group"
+      role="checkbox"
+      aria-label={`${verb} group ${props.groupId}`}
+      aria-checked={props.isActive}
       onClick={props.onClick}
     />
   );
