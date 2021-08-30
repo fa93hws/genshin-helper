@@ -19,6 +19,18 @@ describe('RotationCube', () => {
       const cube = screen.getByLabelText('rotate cube 0 to south');
       expect(cube.style.transform).toEqual('rotate(90deg)');
     });
+
+    it('log error when given degree is not a multiplier of 90', () => {
+      const errorLog = jest
+        .spyOn(console, 'error')
+        .mockImplementation(() => undefined);
+      render(<RotationCube rotationDeg={92} onClick={jest.fn()} cubeId={0} />);
+      expect(
+        screen.getByLabelText('rotate cube 0 to undefined'),
+      ).toBeInTheDocument();
+      expect(errorLog).toHaveBeenCalledTimes(1);
+      errorLog.mockRestore();
+    });
   });
 
   describe('Stateful', () => {
