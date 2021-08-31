@@ -54,4 +54,6 @@ Stateless.args = {
   title: 'cube bar',
   disableAddButton: false,
   disableRemoveButton: false,
+  addButtonLabel: 'add',
+  removeButtonLabel: 'remove',
 };

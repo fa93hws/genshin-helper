@@ -17,6 +17,8 @@ describe('CubeBar', () => {
       title="title"
       disableAddButton={props.disableAddButton}
       disableRemoveButton={props.disableRemoveButton}
+      addButtonLabel="add-cube"
+      removeButtonLabel="remove-cube"
     >
       I am a cube
     </CubeBar>
