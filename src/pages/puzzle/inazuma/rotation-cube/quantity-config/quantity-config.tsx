@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 
-import { CubeBar } from '@ui/inazuma/cube/cube-bar/cube-bar';
+import { CubeBar } from '@ui/inazuma/control-bar/cube-bar';
 import { QuantityConfigStore } from './quantity-config-store';
 
 export function createQuantityConfig(params: {
@@ -26,6 +26,8 @@ export function createQuantityConfig(params: {
       onRemoveClicked={onRemoveClicked}
       disableAddButton={!quantityConfigStore.canAdd}
       disableRemoveButton={!quantityConfigStore.canRemove}
+      addButtonLabel="add-cube"
+      removeButtonLabel="remove-cube"
       title="旋转方块"
     >
       {quantityConfigStore.rotationCubeComponents.map(

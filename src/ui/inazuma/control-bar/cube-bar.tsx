@@ -17,6 +17,8 @@ export type CubeBarProps = {
   disableRemoveButton: boolean;
   children: React.ReactNode;
   title: string;
+  addButtonLabel: string;
+  removeButtonLabel: string;
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +44,7 @@ export const CubeBar = (props: CubeBarProps) => {
     <Box>
       <Box className={styles.titleBar}>
         <IconButton
-          aria-label="remove-cube"
+          aria-label={props.removeButtonLabel}
           color="primary"
           disabled={props.disableRemoveButton}
           onClick={props.onRemoveClicked}
@@ -51,7 +53,7 @@ export const CubeBar = (props: CubeBarProps) => {
         </IconButton>
         <Typography variant="h5">{props.title}</Typography>
         <IconButton
-          aria-label="add-cube"
+          aria-label={props.addButtonLabel}
           color="primary"
           disabled={props.disableAddButton}
           onClick={props.onAddClicked}

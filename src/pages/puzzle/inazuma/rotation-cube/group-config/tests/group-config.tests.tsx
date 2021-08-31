@@ -19,8 +19,7 @@ describe('GroupConfig', () => {
   it('keeps adding labels till reach max', () => {
     const { Component } = createGroupConfig(3);
     render(<Component />);
-    // TODO: change aria-label to add-group
-    const addButton = screen.getByLabelText('add-cube');
+    const addButton = screen.getByLabelText('add-group');
     for (let i = 3; i < GroupConfigStore.maxGroups; i += 1) {
       expect(screen.getAllByLabelText(/^(in)?active group \d$/)).toHaveLength(
         i,
@@ -39,16 +38,14 @@ describe('GroupConfig', () => {
     const lastLabel = screen.getByLabelText('active group 2');
     userEvent.click(lastLabel);
     expect(lastLabel).toBeChecked();
-    // TODO: change aria-label to remove-group
-    userEvent.click(screen.getByLabelText('remove-cube'));
+    userEvent.click(screen.getByLabelText('remove-group'));
     expect(lastLabel).not.toBeInTheDocument();
   });
 
   it('keeps removing labels till reach min', () => {
     const { Component } = createGroupConfig(3);
     render(<Component />);
-    // TODO: change aria-label to remove-group
-    const removeButton = screen.getByLabelText('remove-cube');
+    const removeButton = screen.getByLabelText('remove-group');
     for (let i = 3; i > GroupConfigStore.minGroups; i -= 1) {
       expect(screen.getAllByLabelText(/^(in)?active group \d$/)).toHaveLength(
         i,
