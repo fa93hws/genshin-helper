@@ -23,7 +23,7 @@ jobs:
       - name: Danger
         run: yarn danger ci --dangerfile tools/danger/dangerfile.ts
         env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEBUG: '*'
       - name: Run Eslint
         run: npm run lint
