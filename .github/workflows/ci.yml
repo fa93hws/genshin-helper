@@ -20,6 +20,10 @@ jobs:
           lfs: true
       - name: Run npm
         run: npm ci
+      - name: Danger
+        run: DEBUG="*" yarn danger ci --dangerfile tools/danger/dangerfile.ts
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       - name: Run Eslint
         run: npm run lint
       - name: Check code style
